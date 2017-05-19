@@ -53,6 +53,36 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('suggestedMemo', $value);
     }
 
+    public function getPasswordMd5()
+    {
+        return $this->getParameter('passwordMd5');
+    }
+
+    public function setPasswordMd5($value)
+    {
+        return $this->setParameter('passwordMd5', $value);
+    }
+
+    public function getPassphrase()
+    {
+        return $this->getParameter('passphrase');
+    }
+
+    public function setPassphrase($value)
+    {
+        return $this->setParameter('passphrase', $value);
+    }
+
+    public function getPaymentId()
+    {
+        return $this->getParameter('paymentId');
+    }
+
+    public function setPaymentId($value)
+    {
+        return $this->setParameter('paymentId', $value);
+    }
+
     public function getData()
     {
         $this->validate('account', 'accountName', 'currency', 'amount');

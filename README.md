@@ -1,7 +1,4 @@
 # omnipay-nixmoney
-Nixmoney gateway for [Omnipay](https://github.com/thephpleague/omnipay) payment processing library.
+[![Build Status](https://travis-ci.org/aleksandrzhiliaev/omnipay-nixmoney.svg?branch=master)](https://travis-ci.org/aleksandrzhiliaev/omnipay-nixmoney)
 
-## To-do
-- Full documentation
-- Handling all custom parameters
-- Unit tests
+Nixmoney gateway for [Omnipay](https://github.com/thephpleague/omnipay) payment processing library.

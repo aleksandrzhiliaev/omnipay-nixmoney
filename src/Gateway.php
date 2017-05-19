@@ -74,6 +74,16 @@ class Gateway extends AbstractGateway
         return $this->setParameter('passphrase', $value);
     }
 
+    public function getPaymentId()
+    {
+        return $this->getParameter('paymentId');
+    }
+
+    public function setPaymentId($value)
+    {
+        return $this->setParameter('paymentId', $value);
+    }
+
     public function getDefaultParameters()
     {
         return array(
