@@ -35,6 +35,7 @@ class RefundResponse extends AbstractResponse
         if (!preg_match_all("/<input name='(.*)' type='hidden' value='(.*)'>/", $this->data, $result, PREG_SET_ORDER)) {
             $this->message = 'Invalid response';
             $this->success = false;
+
             return false;
         }
 
@@ -48,6 +49,7 @@ class RefundResponse extends AbstractResponse
         if (isset($ar['ERROR'])) {
             $this->message = $ar['ERROR'];
             $this->success = false;
+
             return false;
         }
 
