@@ -71,7 +71,7 @@ if ($response->isSuccessful()) {
           )."\n";
    }
 
-   $output = '<form action="%1$s" method="post"> %2$s <input type="submit" value="Оплатить заявку" /></form>';
+   $output = '<form action="%1$s" method="post"> %2$s <input type="submit" value="Purchase" /></form>';
    $output = sprintf(
       $output,
       htmlentities($response->getRedirectUrl(), ENT_QUOTES, 'UTF-8', false),
