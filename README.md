@@ -34,7 +34,7 @@ For general usage instructions, please see the main [Omnipay](https://github.com
 repository. See also the [Nixmoney Documentation](http://info.nixmoney.com/en/integration)
 
 ## Example
-
+1. Purchase:
 ```php
 
 $gateway = Omnipay::create('Nixmoney');
@@ -71,7 +71,7 @@ if ($response->isSuccessful()) {
           )."\n";
    }
 
-   $output = '<form action="%1$s" method="post"> %2$s <input type="submit" value="Оплатить заявку" /></form>';
+   $output = '<form action="%1$s" method="post"> %2$s <input type="submit" value="Purchase" /></form>';
    $output = sprintf(
       $output,
       htmlentities($response->getRedirectUrl(), ENT_QUOTES, 'UTF-8', false),
@@ -83,7 +83,43 @@ if ($response->isSuccessful()) {
    echo $response->getMessage();
 }
 ```
+2. Validate webhook
+```php
+try {
+    $response = $gateway->completePurchase()->send();
+    $transactionId = $response->getTransactionId();
+    $amount = $response->getAmount();
+    $success = $response->isSuccessful();
+    $currency = $response->getCurrency();
+    if ($success) {
+       // success 
+    }
+} catch (\Exception $e) {
+  // check $e->getMessage()
+}
+```
+3. Do refund
+```php
+try {
+    $response = $gateway->refund(
+        [
+            'payeeAccount' => 'U04174047283211',
+            'amount' => 0.1,
+            'description' => 'Testing nixmoney',
+            'currency' => 'USD',
+        ]
+    )->send();
 
+    if ($response->isSuccessful()) {
+        // success  
+    } else {
+        // check $response->getMessage();
+    }
+
+} catch (\Exception $e) {
+    // check $e->getMessage();
+}
+```
 
 ## Support
 
