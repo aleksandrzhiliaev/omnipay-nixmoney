@@ -39,15 +39,15 @@ class RefundResponse extends AbstractResponse
             return false;
         }
 
-        $ar = "";
+        $array = "";
         foreach ($result as $item) {
             $key = $item[1];
-            $ar[$key] = $item[2];
+            $array[$key] = $item[2];
         }
 
 
-        if (isset($ar['ERROR'])) {
-            $this->message = $ar['ERROR'];
+        if (isset($array['ERROR'])) {
+            $this->message = $array['ERROR'];
             $this->success = false;
 
             return false;
