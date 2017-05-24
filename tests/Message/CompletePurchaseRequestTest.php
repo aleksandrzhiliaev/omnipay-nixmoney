@@ -42,9 +42,9 @@ class CompletePurchaseRequestTest extends TestCase
             'TIMESTAMPGMT' => '1488022539',
         ];
 
-        $alternatePasswordHash = strtoupper($this->request->getPasswordMd5());
+        $passwordHash = strtoupper($this->request->getPasswordMd5());
 
-        $expectedFingerpring = "{$parameters['PAYMENT_ID']}:{$parameters['PAYEE_ACCOUNT']}:{$parameters['PAYMENT_AMOUNT']}:{$parameters['PAYMENT_UNITS']}:{$parameters['PAYMENT_BATCH_NUM']}:{$parameters['PAYER_ACCOUNT']}:{$alternatePasswordHash}:{$parameters['TIMESTAMPGMT']}";
+        $expectedFingerpring = "{$parameters['PAYMENT_ID']}:{$parameters['PAYEE_ACCOUNT']}:{$parameters['PAYMENT_AMOUNT']}:{$parameters['PAYMENT_UNITS']}:{$parameters['PAYMENT_BATCH_NUM']}:{$parameters['PAYER_ACCOUNT']}:{$passwordHash}:{$parameters['TIMESTAMPGMT']}";
 
         $fingerprint = $this->request->createResponseHash($parameters);
         $this->assertEquals(strtoupper(md5($expectedFingerpring)), $fingerprint);
