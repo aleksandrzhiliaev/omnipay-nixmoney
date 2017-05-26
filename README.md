@@ -1,6 +1,8 @@
 # omnipay-nixmoney
 [![Build Status](https://travis-ci.org/aleksandrzhiliaev/omnipay-nixmoney.svg?branch=master)](https://travis-ci.org/aleksandrzhiliaev/omnipay-nixmoney)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce94ca65540c4d98b3785ab5a89fd797)](https://www.codacy.com/app/sassoftinc/omnipay-nixmoney?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aleksandrzhiliaev/omnipay-nixmoney&amp;utm_campaign=Badge_Grade)
+[![Latest Stable Version](https://poser.pugx.org/aleksandrzhiliaev/omnipay-nixmoney/v/stable)](https://packagist.org/packages/aleksandrzhiliaev/omnipay-nixmoney)
+[![Total Downloads](https://poser.pugx.org/aleksandrzhiliaev/omnipay-nixmoney/downloads)](https://packagist.org/packages/aleksandrzhiliaev/omnipay-nixmoney)
 
 Nixmoney gateway for [Omnipay](https://github.com/thephpleague/omnipay) payment processing library.
 
